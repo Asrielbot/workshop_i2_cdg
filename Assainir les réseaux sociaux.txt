@@ -1,0 +1,25 @@
+Assainir les réseaux sociaux
+
+Assainir les réseaux sociaux
+Idées de pistes
+Asrielobro — Aujourd’hui à 11:35
+Automod
+ 
+
+
+🔞
+deep fake
+gore / morbide
+ 
+ 
+
+Choix : Filtrer les contenus pornographiques et les classifier en explicite pour appliquer le filtre (comme existant sur X)
+
+
+Base de données : PGSQL
+Reconnaissance d'image et de caractères : Azure Content Moderator
+Reconnaissance vidéo (pas prévu actuellement car payant) : Azure Video Indexer
+Développement : Backend en JS - Front en TSX
+Conteneurisation : Docker
+Hébergement : Chez Nous
+Maquette : Figma
