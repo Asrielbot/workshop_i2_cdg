@@ -29,7 +29,6 @@ app.get("/image", async (req, res) => {
 
 app.post("/image", async (req, res) => {
   try {
-    // columns are id_image (uuid), content_image (cdn url), id_post (integer), isfiltered (boolean)
     const { content_image, id_post, isfiltered } = req.body;
     const id_image = uuidv4();
     const result = await pool.query(
