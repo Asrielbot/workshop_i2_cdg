@@ -1,0 +1,43 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: ""
+      POSTGRES_DB: "cdg"
+    volumes:
+      - "/c/data-cdg/postgres-data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+  backend:
+    image: node:21.6.1
+    volumes:
+      - "/D/EPSI/Workshop/I2/CDG/backend:/backend"
+    working_dir: /backend
+    command: sh -c "npm ci && npm run start"
+    environment:
+      DATABASE_URL: postgres://postgres:@db:5432/cdg
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  frontend:
+    image: node:21.6.1
+    volumes:
+      - "/D/EPSI/Workshop/I2/CDG/frontend:/frontend"
+    working_dir: /frontend
+    command: sh -c "npm ci && npm run dev"
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
