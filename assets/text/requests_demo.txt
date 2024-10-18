@@ -1,0 +1,7 @@
+get : nothing
+
+post : content_image, id_post, isfiltered : body
+
+put : content_image, id_post, isfiltered : body - id_image : query
+
+delete : id_image : query
