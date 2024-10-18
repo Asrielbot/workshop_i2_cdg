@@ -1,7 +1,12 @@
-get : nothing
+post : content_image : "https://cdn.discordapp.com/attachments/1179746106100420639/1295725438706122845/460181166_1222661848974992_6685374814707930939_n.jpg?ex=6712fd9a&is=6711ac1a&hm=f2cd91d04f7ede62493bf54d5ebbf2ed8c63d2e1f3fc5f32d1bfcfea5f3407c6&"
+       id_post : 1
+       isfiltered : true
 
-post : content_image, id_post, isfiltered : body
+get : uuid : ""
 
-put : content_image, id_post, isfiltered : body - id_image : query
+put : content_image : body > "https://cdn.discordapp.com/attachments/1179746106100420639/1295725438706122845/460181166_1222661848974992_6685374814707930939_n.jpg?ex=6712fd9a&is=6711ac1a&hm=f2cd91d04f7ede62493bf54d5ebbf2ed8c63d2e1f3fc5f32d1bfcfea5f3407c6&"
+      id_post : body > 1 
+      isfiltered : body > 1
+      id_image : query > ""
 
-delete : id_image : query
+delete : id_image : query > ""
